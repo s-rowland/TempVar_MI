@@ -5,7 +5,7 @@
 # Updated 09/30/2020
 
 ####***********************
-#### Table of Contents ####  
+#### Table of Contents #### 
 ####***********************
 
 # D: Description
@@ -34,16 +34,14 @@ library(here)
 
 # 1a Declare directories
 project.folder <- paste0(print(here::here()),'/')
-intermediate.data.folder <- paste0(project.folder, "DataPrep/Data/Intermediate_Data/")
-final.data.folder <- paste0(project.folder, "DataPrep/Data/Final_Data/")
-analysis.folder <- paste0(project.folder,"TempVar_mi/")
-scripts.folder <- paste0(analysis.folder, "Scripts/")
-outputs.folder <- paste0(analysis.folder, "Outputs/")
-models.folder   <- paste0(outputs.folder, "Models/")
-estimates.folder <- paste0(outputs.folder, "Estimates/")
-plots.folder <- paste0(outputs.folder, "Plots/")
-tables.folder <- paste0(outputs.folder, "Tables/")
-manuscript.folder <- paste0(outputs.folder, "Manuscript/")
+  dataprep.folder <- paste0(project.folder,"DataPrep/")
+    data.folder <- paste0(dataprep.folder, "Data/")
+      raw.data.folder          <- paste0(data.folder, "Raw_Data/")
+        raw.outcome.folder       <- paste0(raw.data.folder, "Outcome_Data/")
+        raw.nldas.folder         <- paste0(raw.data.folder, "NLDAS_Zip_Data/")
+      intermediate.data.folder <- paste0(data.folder, "Intermediate_Data/")
+      final.data.folder        <- paste0(data.folder, "Final_Data/")
+    dataprep.scripts.folder  <- paste0(dataprep.folder, "Scripts/")
 
 # 1b Identify list of folder locations which have just been created above
 folder.names <- grep(".folder",names(.GlobalEnv),value=TRUE)
@@ -56,8 +54,3 @@ create_folders <- function(name){
 
 # 1d Create the folders named above
 lapply(folder.names, create_folders)
-
-
-# 0e Set CaseType 
-# either mi or stroke
-CaseType <- "mi"
