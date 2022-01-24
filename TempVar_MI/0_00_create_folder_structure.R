@@ -27,6 +27,37 @@
 
 # 0a Load Packages
 library(here)
+library(readr)
+library(dplyr)
+library(lubridate)
+library(magrittr)
+library(tidyr)
+library(stringr)
+library(purrr)
+library(forcats)
+library(survival)
+library(stringr)
+library(splines)
+library(mgcv)
+library(nlme)
+library(pspline)
+library(dlnm)
+library(ggplot2)
+library(viridis)
+library(egg)
+
+# 0b Silence dplyr comments
+options(dplyr.summarise.inform = FALSE)
+
+# 0c Add marker 
+Ran_0_00 <- 'Ran_0_00'
+
+# 0d Set CaseType 
+# either mi or stroke
+CaseType <- "mi"
+# 0e Set dataset parameters
+# For TempVar-MI, we always use population-weighted temperature data
+NLDASWeight <- "Pop"
 
 ####********************************
 #### 1: Create Folder Structure #### 
@@ -57,7 +88,5 @@ create_folders <- function(name){
 # 1d Create the folders named above
 lapply(folder.names, create_folders)
 
-
-# 0e Set CaseType 
-# either mi or stroke
-CaseType <- "mi"
+# 1e source functions
+source(paste0(scripts.folder, "C_00_Analyze_TempVar_function.R"))
