@@ -8,9 +8,9 @@ Readme
 Also run this script prior to any other script to generate the strings for the folders.
 
 2. Folder Structure 
-lvl 1: Project (eg Temp_CVD_Analysis)
-lvl 2: Analysis (eg TempVar_mi)
-lvl 3: Components (Data, Scripts, Outputs) 
+  * lvl 1: Project (eg Temp_CVD_Analysis)
+  * lvl 2: Analysis (eg TempVar_mi)
+  * lvl 3: Components (Data, Scripts, Outputs) 
 
 3. Prefix categories
 Folder: DataPrep
